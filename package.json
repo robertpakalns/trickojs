@@ -1,0 +1,29 @@
+{
+  "name": "trickojs",
+  "version": "1.0.0",
+  "description": "Package for using Tricko API",
+  "keywords": [
+    "node",
+    "tricko"
+  ],
+  "license": "GPL-3.0-or-later",
+  "author": "robertpakalns",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertpakalns/trickojs.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
