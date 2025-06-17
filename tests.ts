@@ -3,48 +3,51 @@ import TrickoAPI from "./src/index"
 const main = async () => {
     const api = new TrickoAPI
 
-    // cryzen
+    // Set log identifier
+    api.setLog("buba")
 
-    // player
+    // Cryzen
+
+    // Player
     // const data = await api.cryzen.getPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
-    // leaderboard
+    // Leaderboard
     const data = await api.cryzen.getLeaderboard("lvl")
 
-    // kirka
+    // Kirka
 
-    // player
+    // Player
     // const data = await api.kirka.getPlayer("gytdag")
-    // clan
+    // Clan
     // const data = await api.kirka.getClan("aib")
-    // player leaderboard
+    // Player leaderboard
     // const data = await api.kirka.getPlayerLeaderboard()
-    // clan leaderboard
+    // Clan leaderboard
     // const data = await api.kirka.getClanLeaderboard()
-    // market
+    // Market
     // const data = await api.kirka.getMarket()
 
-    // vectaria
+    // Vectaria
 
-    // player
+    // Player
     // const data = await api.vectaria.getPlayer("Rob4ig")
-    // servers
+    // Servers
     // const data = await api.vectaria.getServers()
-    // server
+    // Server
     // const data = await api.vectaria.getServer("I1O32x7l")
 
-    // voxiom
+    // Voxiom
 
-    // player
+    // Player
     // const data = await api.voxiom.getPlayer("acb")
-    // clan
+    // Clan
     // const data = await api.voxiom.getClan("iv")
-    // br match
+    // BR match
     // const data = await api.voxiom.getMatchBR("1df39bf7-8e53-46fa-b1ab-f2ea8598f181")
-    // br match
+    // CTG match
     // const data = await api.voxiom.getMatchCTG("7b9f1e10-f471-4a71-aade-b4927f26d854")
-    // skin
+    // Market skin
     // const data = await api.voxiom.getSkin(101011010)
-    // leaderboard
+    // Leaderboard
     // const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
 
     console.log(data)

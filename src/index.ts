@@ -3,7 +3,13 @@ import { kirka } from "./routes/kirka"
 import { vectaria } from "./routes/vectaria"
 import { voxiom, LeaderboardParameters } from "./routes/voxiom"
 
+import { setLog as setGlobalLog } from "./utils/fetchData"
+
 class TrickoAPI {
+
+    public setLog(log: string) {
+        setGlobalLog(log)
+    }
 
     public cryzen = {
         getPlayer: (name: string) => cryzen.player(name),
