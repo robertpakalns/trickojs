@@ -1,8 +1,14 @@
 import TrickoAPI from "./src/index"
 
-// Test
 const main = async () => {
     const api = new TrickoAPI
+
+    // cryzen
+
+    // player
+    // const data = await api.cryzen.getPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
+    // leaderboard
+    const data = await api.cryzen.getLeaderboard("lvl")
 
     // kirka
 
@@ -15,7 +21,7 @@ const main = async () => {
     // clan leaderboard
     // const data = await api.kirka.getClanLeaderboard()
     // market
-    const data = await api.kirka.getMarket()
+    // const data = await api.kirka.getMarket()
 
     // vectaria
 

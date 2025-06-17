@@ -1,8 +1,14 @@
+import { cryzen, CryzenLeaderboard } from "./routes/cryzen"
 import { kirka } from "./routes/kirka"
 import { vectaria } from "./routes/vectaria"
 import { voxiom, LeaderboardParameters } from "./routes/voxiom"
 
 class TrickoAPI {
+
+    public cryzen = {
+        getPlayer: (name: string) => cryzen.player(name),
+        getLeaderboard: (type: CryzenLeaderboard) => cryzen.leaderboard(type)
+    }
 
     public kirka = {
         getPlayer: (id: string) => kirka.player(id),
