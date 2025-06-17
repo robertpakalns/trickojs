@@ -2,7 +2,8 @@ import { badResponse, fetchData, FetchResult } from "../utils/fetchData"
 import { TestResult, testParameterLength } from "../utils/testParameter"
 
 const vectariaPlayerTest = (name: string): TestResult => {
-    return testParameterLength(name, { min: 4, max: 16 })
+    const param = name.trim()
+    return testParameterLength(param, { min: 4, max: 16 })
 }
 
 const vectariaPlayer = (name: string): FetchResult => {
@@ -15,13 +16,14 @@ const vectariaServers = (): FetchResult => {
     return fetchData("vectaria", "servers", null)
 }
 
-const vectariaServerTest = (name: string): TestResult => {
-    return testParameterLength(name, { arr: [8] })
+const vectariaServerTest = (id: string): TestResult => {
+    const param = id.trim().toUpperCase()
+    return testParameterLength(param, { arr: [8] })
 }
 
 const vectariaServer = (id: string): FetchResult => {
     const param = id.trim().toUpperCase()
-    if (param.length !== 8) return badResponse("vectaria", "server")
+    if (vectariaServerTest(param)) return badResponse("vectaria", "server")
     return fetchData("vectaria", "server", param)
 }
 

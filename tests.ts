@@ -10,8 +10,10 @@ const main = async () => {
 
     // Player
     // const data = await api.cryzen.getPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
+    // const test = api.cryzen.testPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
     // Leaderboard
     // const data = await api.cryzen.getLeaderboard("lvl")
+    const test = api.cryzen.testLeaderboard("lbvl")
 
     // Kirka
 
@@ -35,7 +37,7 @@ const main = async () => {
     // const data = await api.vectaria.getServers()
     // Server
     // const data = await api.vectaria.getServer("I1O32x7l")
-    const test = api.vectaria.testServer("I1O32x7l")
+    // const test = api.vectaria.testServer("I1O32x7l")
 
     // Voxiom
 
