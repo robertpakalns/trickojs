@@ -26,8 +26,10 @@ class TrickoAPI {
 
     public vectaria = {
         getPlayer: (name: string) => vectaria.player(name),
+        testPlayer: (name: string) => vectaria.player_test(name),
         getServers: vectaria.servers,
-        getServer: (id: string) => vectaria.server(id)
+        getServer: (id: string) => vectaria.server(id),
+        testServer: (id: string) => vectaria.server_test(id)
     }
 
     public voxiom = {
