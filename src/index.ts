@@ -38,11 +38,15 @@ class TrickoAPI {
 
     public voxiom = {
         getPlayer: (name: string) => voxiom.player(name),
+        testPlayer: (name: string) => voxiom.player_test(name),
         getClan: (name: string) => voxiom.clan(name),
+        testClan: (name: string) => voxiom.clan_test(name),
         getMatchBR: (id: string) => voxiom.match_br(id),
         getMatchCTG: (id: string) => voxiom.match_ctg(id),
         getSkin: (id: number) => voxiom.skin(id),
-        getLeaderboard: (params: LeaderboardParameters) => voxiom.leaderboard(params)
+        testSkin: (id: number) => voxiom.skin_test(id),
+        getLeaderboard: (params: LeaderboardParameters) => voxiom.leaderboard(params),
+        testLeaderboard: (params: LeaderboardParameters) => voxiom.leaderboard_test(params)
     }
 }
 

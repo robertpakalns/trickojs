@@ -22,7 +22,7 @@ const main = async () => {
     // const test = api.kirka.testPlayer("gytda")
     // Clan
     // const data = await api.kirka.getClan("aib")
-    const test = api.kirka.testClan("aiegtmmgkkk")
+    // const test = api.kirka.testClan("aiegtmmgkkk")
     // Player leaderboard
     // const data = await api.kirka.getPlayerLeaderboard()
     // Clan leaderboard
@@ -45,19 +45,23 @@ const main = async () => {
 
     // Player
     // const data = await api.voxiom.getPlayer("acb")
+    // const test = api.voxiom.testPlayer("12")
     // Clan
     // const data = await api.voxiom.getClan("iv")
+    // const test = api.voxiom.testClan("12")
     // BR match
     // const data = await api.voxiom.getMatchBR("1df39bf7-8e53-46fa-b1ab-f2ea8598f181")
     // CTG match
     // const data = await api.voxiom.getMatchCTG("7b9f1e10-f471-4a71-aade-b4927f26d854")
     // Market skin
     // const data = await api.voxiom.getSkin(101011010)
+    // const test = api.voxiom.testSkin(12)
     // Leaderboard
-    // const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
+    const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
+    // const test = api.voxiom.testLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
 
-    // console.log(data)
-    console.log(test)
+    console.log(data)
+    // console.log(test)
 }
 
 main()
