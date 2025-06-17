@@ -13,14 +13,16 @@ const main = async () => {
     // const test = api.cryzen.testPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
     // Leaderboard
     // const data = await api.cryzen.getLeaderboard("lvl")
-    const test = api.cryzen.testLeaderboard("lbvl")
+    // const test = api.cryzen.testLeaderboard("lbvl")
 
     // Kirka
 
     // Player
     // const data = await api.kirka.getPlayer("gytdag")
+    // const test = api.kirka.testPlayer("gytda")
     // Clan
     // const data = await api.kirka.getClan("aib")
+    const test = api.kirka.testClan("aiegtmmgkkk")
     // Player leaderboard
     // const data = await api.kirka.getPlayerLeaderboard()
     // Clan leaderboard

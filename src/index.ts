@@ -20,7 +20,9 @@ class TrickoAPI {
 
     public kirka = {
         getPlayer: (id: string) => kirka.player(id),
+        testPlayer: (id: string) => kirka.player_test(id),
         getClan: (name: string) => kirka.clan(name),
+        testClan: (name: string) => kirka.clan_test(name),
         getPlayerLeaderboard: kirka.leaderboard_players,
         getClanLeaderboard: kirka.leaderboard_clans,
         getMarket: kirka.market
