@@ -1,13 +1,21 @@
-import { voxiom } from "./routes/voxiom"
+import { voxiom, LeaderboardParameters } from "./routes/voxiom"
+import { vectaria } from "./routes/vectaria"
 
 export class TrickoAPI {
+
+    public vectaria = {
+        getPlayer: (name: string) => vectaria.player(name),
+        getServers: vectaria.servers,
+        getServer: (id: string) => vectaria.server(id)
+    }
+
     public voxiom = {
         getPlayer: (name: string) => voxiom.player(name),
         getClan: (name: string) => voxiom.clan(name),
         getMatchBR: (id: string) => voxiom.match_br(id),
         getMatchCTG: (id: string) => voxiom.match_ctg(id),
         getSkin: (id: number) => voxiom.skin(id),
-        getLeaderboard: voxiom.leaderboard
+        getLeaderboard: (params: LeaderboardParameters) => voxiom.leaderboard(params)
     }
 }
 
@@ -15,6 +23,15 @@ export class TrickoAPI {
 // Test
 const main = async () => {
     const api = new TrickoAPI
+
+    // vectaria
+
+    // player
+    // const data = await api.vectaria.getPlayer("Rob4ig")
+    // servers
+    // const data = await api.vectaria.getServers()
+    // server
+    const data = await api.vectaria.getServer("I1O32x7l")
 
     // voxiom
 
@@ -29,11 +46,7 @@ const main = async () => {
     // skin
     // const data = await api.voxiom.getSkin(101011010)
     // leaderboard
-    const data = await api.voxiom.getLeaderboard({
-        type: "ctg",
-        range: "week",
-        sort: "total_score"
-    })
+    // const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
 
     console.log(data)
 }

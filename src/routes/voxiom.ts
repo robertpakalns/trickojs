@@ -1,20 +1,24 @@
 import { badResponse, fetchData, FetchResult } from "../utils/fetchData"
 
 const voxiomPlayer = (name: string): FetchResult => {
-    if (name.length < 3 || name.length > 18) return badResponse("voxiom", "player")
-    return fetchData("voxiom", "player", name)
+    const param = name.trim()
+    if (param.length < 3 || param.length > 18) return badResponse("voxiom", "player")
+    return fetchData("voxiom", "player", param)
 }
 
 const voxiomClan = (name: string): FetchResult => {
-    if (name.length < 2 || name.length > 4) return badResponse("voxiom", "clan")
-    return fetchData("voxiom", "clan", name)
+    const param = name.trim()
+    if (param.length < 2 || param.length > 4) return badResponse("voxiom", "clan")
+    return fetchData("voxiom", "clan", param)
 }
 
 const voxiomMatchBR = (id: string): FetchResult => {
-    return fetchData("voxiom", "match/br", id)
+    const param = id.trim()
+    return fetchData("voxiom", "match/br", param)
 }
 const voxiomMatchCTG = (id: string): FetchResult => {
-    return fetchData("voxiom", "match/ctg", id)
+    const param = id.trim()
+    return fetchData("voxiom", "match/ctg", param)
 }
 
 const voxiomSkin = (id: number): FetchResult => {
@@ -30,7 +34,7 @@ const sorts = {
     clan: ["total_score", "total_games_won", "total_kills", "total_power"]
 }
 
-type LeaderboardParameters = { type: string; range: string; sort: string }
+export type LeaderboardParameters = { type: string; range: string; sort: string }
 const voxiomLeaderboard = ({ type, range, sort }: LeaderboardParameters): FetchResult => {
     const _type = type.trim().toLowerCase()
     const _range = range.trim().toLowerCase()
@@ -48,9 +52,9 @@ const voxiomLeaderboard = ({ type, range, sort }: LeaderboardParameters): FetchR
         validSorts &&
         (typeKey === "all" || ranges.includes(params.get("range") || "")) &&
         validSorts.includes(params.get("sort") || "")
-    ) return badResponse("voxiom", "leaderboard")
+    ) return fetchData("voxiom", "leaderboard", `?${params.toString()}`)
 
-    return fetchData("voxiom", "leaderboard", `?${params.toString()}`)
+    return badResponse("voxiom", "leaderboard")
 }
 
 export const voxiom = {
@@ -59,5 +63,5 @@ export const voxiom = {
     match_br: (id: string) => voxiomMatchBR(id),
     match_ctg: (id: string) => voxiomMatchCTG(id),
     skin: (id: number) => voxiomSkin(id),
-    leaderboard: voxiomLeaderboard
+    leaderboard: (params: LeaderboardParameters) => voxiomLeaderboard(params)
 }
