@@ -1,7 +1,7 @@
 import { cryzen } from "./routes/cryzen"
 import { kirka } from "./routes/kirka"
 import { vectaria } from "./routes/vectaria"
-import { voxiom, LeaderboardParameters } from "./routes/voxiom"
+import { voxiom } from "./routes/voxiom"
 
 import { setLog as setGlobalLog } from "./utils/fetchData"
 
@@ -12,46 +12,51 @@ class TrickoAPI {
     }
 
     public cryzen = {
-        getPlayer: (name: string) => cryzen.player(name),
-        testPlayer: (name: string) => cryzen.player_test(name),
-        getPlayerRoute: (name: string) => cryzen.player_route(name),
-        getLeaderboard: (type: string) => cryzen.leaderboard(type),
-        testLeaderboard: (type: string) => cryzen.leaderboard_test(type),
-        getLeaderboardRoute: (type: string) => cryzen.leaderboard_route(type),
+        getPlayer: cryzen.player,
+        testPlayer: cryzen.player_test,
+        getPlayerRoute: cryzen.player_route,
+        getLeaderboard: cryzen.leaderboard,
+        testLeaderboard: cryzen.leaderboard_test,
+        getLeaderboardRoute: cryzen.leaderboard_route
     }
 
     public kirka = {
-        getPlayer: (id: string) => kirka.player(id),
-        testPlayer: (id: string) => kirka.player_test(id),
-        getClan: (name: string) => kirka.clan(name),
-        testClan: (name: string) => kirka.clan_test(name),
+        getPlayer: kirka.player,
+        testPlayer: kirka.player_test,
+        getPlayerRoute: kirka.player_route,
+        getClan: kirka.clan,
+        testClan: kirka.clan_test,
+        getClanRoute: kirka.clan_route,
         getPlayerLeaderboard: kirka.leaderboard_players,
+        getPlayerLeaderboardRoute: kirka.leaderboard_players_route,
         getClanLeaderboard: kirka.leaderboard_clans,
-        getMarket: kirka.market
+        getClanLeaderboardRoute: kirka.leaderboard_clans_route,
+        getMarket: kirka.market,
+        getMarketRoute: kirka.market_route
     }
 
     public vectaria = {
-        getPlayer: (name: string) => vectaria.player(name),
-        testPlayer: (name: string) => vectaria.player_test(name),
-        getPlayerRoute: (name: string) => vectaria.player_route(name),
+        getPlayer: vectaria.player,
+        testPlayer: vectaria.player_test,
+        getPlayerRoute: vectaria.player_route,
         getServers: vectaria.servers,
         getServersRoute: vectaria.servers_route,
-        getServer: (id: string) => vectaria.server(id),
-        testServer: (id: string) => vectaria.server_test(id),
-        getServerRoute: (id: string) => vectaria.server_route(id)
+        getServer: vectaria.server,
+        testServer: vectaria.server_test,
+        getServerRoute: vectaria.server_route
     }
 
     public voxiom = {
-        getPlayer: (name: string) => voxiom.player(name),
-        testPlayer: (name: string) => voxiom.player_test(name),
-        getClan: (name: string) => voxiom.clan(name),
-        testClan: (name: string) => voxiom.clan_test(name),
-        getMatchBR: (id: string) => voxiom.match_br(id),
-        getMatchCTG: (id: string) => voxiom.match_ctg(id),
-        getSkin: (id: number) => voxiom.skin(id),
-        testSkin: (id: number) => voxiom.skin_test(id),
-        getLeaderboard: (params: LeaderboardParameters) => voxiom.leaderboard(params),
-        testLeaderboard: (params: LeaderboardParameters) => voxiom.leaderboard_test(params)
+        getPlayer: voxiom.player,
+        testPlayer: voxiom.player_test,
+        getClan: voxiom.clan,
+        testClan: voxiom.clan_test,
+        getMatchBR: voxiom.match_br,
+        getMatchCTG: voxiom.match_ctg,
+        getSkin: voxiom.skin,
+        testSkin: voxiom.skin_test,
+        getLeaderboard: voxiom.leaderboard,
+        testLeaderboard: voxiom.leaderboard_test
     }
 }
 

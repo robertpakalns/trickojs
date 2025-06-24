@@ -22,15 +22,20 @@ const main = async () => {
     // Player
     // const data = await api.kirka.getPlayer("gytdag")
     // const test = api.kirka.testPlayer("gytda")
+    // const route = api.kirka.getPlayerRoute("sniper")
     // Clan
     // const data = await api.kirka.getClan("aib")
     // const test = api.kirka.testClan("aiegtmmgkkk")
+    // const route = api.kirka.getClanRoute("prog")
     // Player leaderboard
     // const data = await api.kirka.getPlayerLeaderboard()
+    // const route = api.kirka.getPlayerLeaderboardRoute()
     // Clan leaderboard
     // const data = await api.kirka.getClanLeaderboard()
+    // const route = api.kirka.getClanLeaderboardRoute()
     // Market
     // const data = await api.kirka.getMarket()
+    const route = api.kirka.getMarketRoute()
 
     // Vectaria
 
@@ -44,7 +49,7 @@ const main = async () => {
     // Server
     // const data = await api.vectaria.getServer("I1O32x7l")
     // const test = api.vectaria.testServer("I1O32x7l")
-    const route = api.vectaria.getServerRoute("I1O32x7l         ")
+    // const route = api.vectaria.getServerRoute("I1O32x7l         ")
 
     // Voxiom
 
