@@ -14,8 +14,10 @@ class TrickoAPI {
     public cryzen = {
         getPlayer: (name: string) => cryzen.player(name),
         testPlayer: (name: string) => cryzen.player_test(name),
+        getPlayerRoute: (name: string) => cryzen.player_route(name),
         getLeaderboard: (type: string) => cryzen.leaderboard(type),
-        testLeaderboard: (type: string) => cryzen.leaderboard_test(type)
+        testLeaderboard: (type: string) => cryzen.leaderboard_test(type),
+        getLeaderboardRoute: (type: string) => cryzen.leaderboard_route(type),
     }
 
     public kirka = {
@@ -31,9 +33,12 @@ class TrickoAPI {
     public vectaria = {
         getPlayer: (name: string) => vectaria.player(name),
         testPlayer: (name: string) => vectaria.player_test(name),
+        getPlayerRoute: (name: string) => vectaria.player_route(name),
         getServers: vectaria.servers,
+        getServersRoute: vectaria.servers_route,
         getServer: (id: string) => vectaria.server(id),
-        testServer: (id: string) => vectaria.server_test(id)
+        testServer: (id: string) => vectaria.server_test(id),
+        getServerRoute: (id: string) => vectaria.server_route(id)
     }
 
     public voxiom = {

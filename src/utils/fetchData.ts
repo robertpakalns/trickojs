@@ -22,11 +22,16 @@ export const setLog = (log: string): void => {
     globalLog = param
 }
 
-export const fetchData = async (game: string, type: string, param: string | number | null): Promise<Response> => {
+export const getDataURL = (game: string, type: string, param: string | number | null) => {
     let url = `https://api.tricko.pro/${game}/${type}`
-    if (param) url += `/${param}`
+    if (param) url += `/${encodeURIComponent(param)}`
     url += url.includes("?") ? `&log=${globalLog}` : `?log=${globalLog}`
 
+    return url
+}
+
+export const fetchData = async (game: string, type: string, param: string | number | null): Promise<Response> => {
+    const url = getDataURL(game, type, param)
     const response = await fetch(url)
     return await response.json()
 }

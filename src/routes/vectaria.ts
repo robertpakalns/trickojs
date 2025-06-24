@@ -1,36 +1,53 @@
-import { badResponse, fetchData, FetchResult } from "../utils/fetchData"
+import { badResponse, fetchData, FetchResult, getDataURL } from "../utils/fetchData"
 import { TestResult, testParameterLength } from "../utils/testParameter"
 
-const vectariaPlayerTest = (name: string): TestResult => {
+const player_route = (name: string): string => {
+    const param = name.trim()
+    return getDataURL("vectaria", "player", param)
+}
+
+const player_test = (name: string): TestResult => {
     const param = name.trim()
     return testParameterLength(param, { min: 4, max: 16 })
 }
 
-const vectariaPlayer = (name: string): FetchResult => {
+const player = (name: string): FetchResult => {
     const param = name.trim()
-    if (vectariaPlayerTest(param)) return badResponse("vectaria", "player")
+    if (player_test(param)) return badResponse("vectaria", "player")
     return fetchData("vectaria", "player", param)
 }
 
-const vectariaServers = (): FetchResult => {
+const servers_route = (): string => {
+    return getDataURL("vectaria", "servers", null)
+}
+
+const servers = (): FetchResult => {
     return fetchData("vectaria", "servers", null)
 }
 
-const vectariaServerTest = (id: string): TestResult => {
+const server_route = (id: string): string => {
+    const param = id.trim().toUpperCase()
+    return getDataURL("vectaria", "server", param)
+}
+
+const server_test = (id: string): TestResult => {
     const param = id.trim().toUpperCase()
     return testParameterLength(param, { arr: [8] })
 }
 
-const vectariaServer = (id: string): FetchResult => {
+const server = (id: string): FetchResult => {
     const param = id.trim().toUpperCase()
-    if (vectariaServerTest(param)) return badResponse("vectaria", "server")
+    if (server_test(param)) return badResponse("vectaria", "server")
     return fetchData("vectaria", "server", param)
 }
 
 export const vectaria = {
-    player: (name: string) => vectariaPlayer(name),
-    player_test: (name: string) => vectariaPlayerTest(name),
-    servers: vectariaServers,
-    server: (id: string) => vectariaServer(id),
-    server_test: (id: string) => vectariaServerTest(id)
+    player,
+    player_test,
+    player_route,
+    servers,
+    servers_route,
+    server,
+    server_test,
+    server_route
 }

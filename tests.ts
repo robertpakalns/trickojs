@@ -11,9 +11,11 @@ const main = async () => {
     // Player
     // const data = await api.cryzen.getPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
     // const test = api.cryzen.testPlayer("4ca11352-cdfe-4d64-bed6-d840d1558651")
+    // const route = api.cryzen.getPlayerRoute("user#tricko")
     // Leaderboard
     // const data = await api.cryzen.getLeaderboard("lvl")
     // const test = api.cryzen.testLeaderboard("lbvl")
+    // const route = api.cryzen.getLeaderboardRoute("             kills              ")
 
     // Kirka
 
@@ -35,11 +37,14 @@ const main = async () => {
     // Player
     // const data = await api.vectaria.getPlayer("Rob4ig")
     // const test = api.vectaria.testPlayer("Rodg")
+    // const route = api.vectaria.getPlayerRoute("Rob5ig")
     // Servers
     // const data = await api.vectaria.getServers()
+    // const route = api.vectaria.getServersRoute()
     // Server
     // const data = await api.vectaria.getServer("I1O32x7l")
     // const test = api.vectaria.testServer("I1O32x7l")
+    const route = api.vectaria.getServerRoute("I1O32x7l         ")
 
     // Voxiom
 
@@ -57,11 +62,12 @@ const main = async () => {
     // const data = await api.voxiom.getSkin(101011010)
     // const test = api.voxiom.testSkin(12)
     // Leaderboard
-    const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
+    // const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
     // const test = api.voxiom.testLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
 
-    console.log(data)
+    // console.log(data)
     // console.log(test)
+    console.log(route)
 }
 
 main()
