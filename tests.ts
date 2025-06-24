@@ -35,7 +35,7 @@ const main = async () => {
     // const route = api.kirka.getClanLeaderboardRoute()
     // Market
     // const data = await api.kirka.getMarket()
-    const route = api.kirka.getMarketRoute()
+    // const route = api.kirka.getMarketRoute()
 
     // Vectaria
 
@@ -56,19 +56,25 @@ const main = async () => {
     // Player
     // const data = await api.voxiom.getPlayer("acb")
     // const test = api.voxiom.testPlayer("12")
+    // const route = api.voxiom.getPlayerRoute("123")
     // Clan
     // const data = await api.voxiom.getClan("iv")
     // const test = api.voxiom.testClan("12")
+    // const route = api.voxiom.getClanRoute("123")
     // BR match
     // const data = await api.voxiom.getMatchBR("1df39bf7-8e53-46fa-b1ab-f2ea8598f181")
+    // const route = api.voxiom.getMatchBRRoute("1df39bf7-8e53-46fa-b1ab-f2ea8598f181")
     // CTG match
     // const data = await api.voxiom.getMatchCTG("7b9f1e10-f471-4a71-aade-b4927f26d854")
+    // const route = api.voxiom.getMatchCTGRoute("1df39bf7-8e53-46fa-b1ab-f2ea8598f181")
     // Market skin
     // const data = await api.voxiom.getSkin(101011010)
     // const test = api.voxiom.testSkin(12)
+    // const route = api.voxiom.getSkinRoute(54)
     // Leaderboard
     // const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
     // const test = api.voxiom.testLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
+    const route = api.voxiom.getLeaderboardRoute({ type: "ctg", range: "week", sort: "total_score" })
 
     // console.log(data)
     // console.log(test)

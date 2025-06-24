@@ -24,7 +24,10 @@ export const setLog = (log: string): void => {
 
 export const getDataURL = (game: string, type: string, param: string | number | null) => {
     let url = `https://api.tricko.pro/${game}/${type}`
-    if (param) url += `/${encodeURIComponent(param)}`
+    if (param) {
+        if (game === "voxiom" && type === "leaderboard") url += `/${param}`
+        else url += `/${encodeURIComponent(param)}`
+    }
     url += url.includes("?") ? `&log=${globalLog}` : `?log=${globalLog}`
 
     return url

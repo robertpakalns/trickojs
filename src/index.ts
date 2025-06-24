@@ -49,14 +49,20 @@ class TrickoAPI {
     public voxiom = {
         getPlayer: voxiom.player,
         testPlayer: voxiom.player_test,
+        getPlayerRoute: voxiom.player_route,
         getClan: voxiom.clan,
         testClan: voxiom.clan_test,
+        getClanRoute: voxiom.clan_route,
         getMatchBR: voxiom.match_br,
+        getMatchBRRoute: voxiom.match_br_route,
         getMatchCTG: voxiom.match_ctg,
+        getMatchCTGRoute: voxiom.match_ctg_route,
         getSkin: voxiom.skin,
         testSkin: voxiom.skin_test,
+        getSkinRoute: voxiom.skin_route,
         getLeaderboard: voxiom.leaderboard,
-        testLeaderboard: voxiom.leaderboard_test
+        testLeaderboard: voxiom.leaderboard_test,
+        getLeaderboardRoute: voxiom.leaderboard_route
     }
 }
 
