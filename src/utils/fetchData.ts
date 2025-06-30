@@ -1,4 +1,5 @@
 let globalLog = "trickojs"
+let glodalAuthorization = ""
 
 export type FetchResult = Object | Promise<Response>
 
@@ -22,6 +23,10 @@ export const setLog = (log: string): void => {
     globalLog = param
 }
 
+export const setAuthorization = (value: string): void => {
+    glodalAuthorization = value
+}
+
 export const getDataURL = (game: string, type: string, param: string | number | null) => {
     let url = `https://api.tricko.pro/${game}/${type}`
     if (param) {
@@ -35,6 +40,11 @@ export const getDataURL = (game: string, type: string, param: string | number | 
 
 export const fetchData = async (game: string, type: string, param: string | number | null): Promise<Response> => {
     const url = getDataURL(game, type, param)
-    const response = await fetch(url)
+
+    const options = glodalAuthorization
+        ? { headers: { Authorization: glodalAuthorization } }
+        : {}
+
+    const response = await fetch(url, options)
     return await response.json()
 }

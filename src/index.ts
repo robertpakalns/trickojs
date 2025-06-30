@@ -3,12 +3,16 @@ import { kirka } from "./routes/kirka"
 import { vectaria } from "./routes/vectaria"
 import { voxiom } from "./routes/voxiom"
 
-import { setLog as setGlobalLog } from "./utils/fetchData"
+import { setLog as setGlobalLog, setAuthorization as setGlobalAuthorization } from "./utils/fetchData"
 
 class TrickoAPI {
 
     public setLog(log: string) {
         setGlobalLog(log)
+    }
+
+    public setAuthorization(value: string) {
+        setGlobalAuthorization(value)
     }
 
     public cryzen = {
