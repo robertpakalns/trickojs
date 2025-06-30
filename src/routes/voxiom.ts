@@ -122,9 +122,16 @@ const leaderboard_test = ({ type, range, sort }: LeaderboardParameters): TestRes
 const leaderboard = ({ type, range, sort }: LeaderboardParameters): FetchResult => {
     if (leaderboard_test({ type, range, sort })) return badResponse("voxiom", "leaderboard")
 
-    const query = leaderboard_route({ type, range, sort })
+    const _type = type.trim().toLowerCase()
+    const _range = range.trim().toLowerCase()
+    const _sort = sort.trim().toLowerCase()
 
-    return fetchData("voxiom", "leaderboard", query)
+    const params = new URLSearchParams()
+    if (_type && !["all", "clan"].includes(_type)) params.append("type", _type)
+    if (_range) params.append("range", _range)
+    if (_sort) params.append("sort", _sort)
+
+    return fetchData("voxiom", "leaderboard", `?${params.toString()}`)
 }
 
 export const voxiom = {
