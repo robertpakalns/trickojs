@@ -87,7 +87,7 @@ const leaderboard_route = ({ type, range, sort }: LeaderboardParameters): string
     const _sort = sort.trim().toLowerCase()
 
     const params = new URLSearchParams()
-    if (_type && !["all", "clan"].includes(_type)) params.append("type", _type)
+    if (_type) params.append("type", _type)
     if (_range) params.append("range", _range)
     if (_sort) params.append("sort", _sort)
 
@@ -127,7 +127,7 @@ const leaderboard = ({ type, range, sort }: LeaderboardParameters): FetchResult 
     const _sort = sort.trim().toLowerCase()
 
     const params = new URLSearchParams()
-    if (_type && !["all", "clan"].includes(_type)) params.append("type", _type)
+    if (_type) params.append("type", _type)
     if (_range) params.append("range", _range)
     if (_sort) params.append("sort", _sort)
 

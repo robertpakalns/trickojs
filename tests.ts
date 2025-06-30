@@ -72,9 +72,9 @@ const main = async () => {
     // const test = api.voxiom.testSkin(12)
     // const route = api.voxiom.getSkinRoute(54)
     // Leaderboard
-    // const data = await api.voxiom.getLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
+    // const data = await api.voxiom.getLeaderboard({ type: "clan", range: "all", sort: "total_score" })
     // const test = api.voxiom.testLeaderboard({ type: "ctg", range: "week", sort: "total_score" })
-    const route = api.voxiom.getLeaderboardRoute({ type: "ctg", range: "week", sort: "total_score" })
+    const route = api.voxiom.getLeaderboardRoute({ type: "all", range: "all", sort: "score" })
 
     // console.log(data)
     // console.log(test)

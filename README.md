@@ -18,6 +18,7 @@ import TrickoAPI from "trickojs"
 const api = new TrickoAPI
 
 api.setLog("custom-log") // Optional: set a log label for requests to api.tricko.pro
+api.setAuthorization("BOT <token>") // Optional: set Authorization header for a request
 
 // Example methods (see more in src/index.ts and src/tests.ts)
 const data = await api.cryzen.getPlayer("TheMasterRob4ig")  // Get player data (returns JSON)
