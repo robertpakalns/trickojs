@@ -82,9 +82,9 @@ const sorts = {
 export type LeaderboardParameters = { type: string; range: string; sort: string }
 
 const leaderboard_route = ({ type, range, sort }: LeaderboardParameters): string => {
-    const _type = type.trim().toLowerCase()
-    const _range = range.trim().toLowerCase()
-    const _sort = sort.trim().toLowerCase()
+    const _type = type?.trim().toLowerCase() || ""
+    const _range = range?.trim().toLowerCase() || ""
+    const _sort = sort?.trim().toLowerCase() || ""
 
     const params = new URLSearchParams()
     if (_type) params.append("type", _type)
@@ -95,9 +95,9 @@ const leaderboard_route = ({ type, range, sort }: LeaderboardParameters): string
 }
 
 const leaderboard_test = ({ type, range, sort }: LeaderboardParameters): TestResult => {
-    const _type = type.trim().toLowerCase()
-    const _range = range.trim().toLowerCase()
-    const _sort = sort.trim().toLowerCase()
+    const _type = type?.trim().toLowerCase() || ""
+    const _range = range?.trim().toLowerCase() || ""
+    const _sort = sort?.trim().toLowerCase() || ""
 
     const params = new URLSearchParams()
     if (_type && !["all", "clan"].includes(_type)) params.append("type", _type)
@@ -122,9 +122,9 @@ const leaderboard_test = ({ type, range, sort }: LeaderboardParameters): TestRes
 const leaderboard = ({ type, range, sort }: LeaderboardParameters): FetchResult => {
     if (leaderboard_test({ type, range, sort })) return badResponse("voxiom", "leaderboard")
 
-    const _type = type.trim().toLowerCase()
-    const _range = range.trim().toLowerCase()
-    const _sort = sort.trim().toLowerCase()
+    const _type = type?.trim().toLowerCase() || ""
+    const _range = range?.trim().toLowerCase() || ""
+    const _sort = sort?.trim().toLowerCase() || ""
 
     const params = new URLSearchParams()
     if (_type) params.append("type", _type)

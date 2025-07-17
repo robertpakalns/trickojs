@@ -8,6 +8,20 @@
 # trickojs
 An npm package for validating parameters and sending requests to [`api.tricko.pro`](https://api.tricko.pro), the backend for [Tricko.pro](https://tricko.pro) and [Tricko Bot](https://discord.com/oauth2/authorize?client_id=1182411176517324840).
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/trickojs">
+    <img src="https://img.shields.io/badge/Download-npmjs-red?style=for-the-badge&logo=npm&logoColor=white" />
+  </a>
+
+  <a href="https://discord.gg/yPjrUrvSzv">
+    <img src="https://img.shields.io/badge/Join-Discord-5661F5?style=for-the-badge&logo=discord&logoColor=white" />
+  </a>
+
+  <a href="https://tricko.pro/redline">
+    <img src="https://img.shields.io/badge/Visit-Tricko.pro-black?style=for-the-badge&logo=Google-Chrome&logoColor=white" />
+  </a>
+</p>
+
 ## Build locally
 ```bash
 npm i -g bun  # Install Bun if not already installed
